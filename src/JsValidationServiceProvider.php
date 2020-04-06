@@ -88,7 +88,7 @@ class JsValidationServiceProvider extends ServiceProvider
     protected function publishAssets()
     {
         $this->publishes([
-            realpath(__DIR__.'/../public') => $this->app['path.public'].'/vendor/jsvalidation',
+            realpath(__DIR__.'/../public/js') => $this->app['path.public'].'/js/vendor/jsvalidation',
         ], 'public');
     }
 }
