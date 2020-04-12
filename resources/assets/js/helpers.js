@@ -139,7 +139,7 @@ $.extend(true, laravelValidation, {
                 return parseFloat(Math.floor(this.fileinfo(element).size));
             }
 
-            return parseFloat(this.strlen(value));
+            return parseFloat(this.strlen($($.parseHTML(value)).text()));
         },
 
 

@@ -598,7 +598,7 @@ $.extend(true, laravelValidation, {
                 return false;
             }
 
-            var regex = new RegExp("^(?:^[a-z\u00E0-\u00FC]+$)$",'i');
+            var regex = new RegExp("^(?:^[a-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ\u00E0-\u00FC]+$)$",'i');
             return  regex.test(value);
 
         },
@@ -612,7 +612,7 @@ $.extend(true, laravelValidation, {
             if (typeof  value !== 'string') {
                 return false;
             }
-            var regex = new RegExp("^(?:^[a-z0-9\u00E0-\u00FC]+$)$",'i');
+            var regex = new RegExp("^(?:^[a-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ0-9\u00E0-\u00FC]+$)$",'i');
             return regex.test(value);
         },
 
@@ -625,7 +625,7 @@ $.extend(true, laravelValidation, {
             if (typeof  value !== 'string') {
                 return false;
             }
-            var regex = new RegExp("^(?:^[a-z0-9\u00E0-\u00FC_-]+$)$",'i');
+            var regex = new RegExp("^(?:^[a-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ0-9\u00E0-\u00FC_-]+$)$",'i');
             return regex.test(value);
         },
 
