@@ -2,7 +2,7 @@
 window.addEventListener('DOMContentLoaded', function() {
     jQuery(document).on('readyAndAjax', function () {
         $("<?= $validator['selector']; ?>").each(function() {
-            jQuery_2_1_3(this).validate({
+            $(this).validate({
                 errorElement: 'span',
                 errorClass: 'invalid-feedback font-weight-bold',
 
