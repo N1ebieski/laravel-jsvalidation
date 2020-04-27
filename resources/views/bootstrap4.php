@@ -11,14 +11,14 @@ window.addEventListener('DOMContentLoaded', function() {
                     $('#error-' + selector).remove();
                     if (element.parent('.input-group').length ||
                         element.prop('type') === 'checkbox' || element.prop('type') === 'radio' || element.prop('type') === 'file') {
-                            error.insertAfter(element.closest('#' + selector));
+                            error.appendTo(element.closest('.form-group'));
                         // else just place the validation message immediately after the input
                     } else {
                         error.insertAfter(element);
                     }
                 },
                 highlight: function (element) {
-                    $(element).closest('.form-control').removeClass('is-valid').addClass('is-invalid'); // add the Bootstrap error class to the control group
+                    $(element).closest('.form-control, .custom-control-input').removeClass('is-valid').addClass('is-invalid'); // add the Bootstrap error class to the control group
                 },
 
                 <?php if (isset($validator['ignore']) && is_string($validator['ignore'])): ?>
@@ -31,12 +31,12 @@ window.addEventListener('DOMContentLoaded', function() {
                     var fields = <?= json_encode(array_keys($validator['rules'])); ?>;
 
                     if ($.inArray($(element).attr('name').replace('[]', ''), fields) != -1) {
-                        $(element).closest('.form-control').removeClass('is-invalid').addClass('is-valid');
+                        $(element).closest('.form-control, .custom-control-input').removeClass('is-invalid').addClass('is-valid');
                     }                    
                 },
                 
                 success: function (element) {
-                    $(element).closest('.form-control').removeClass('is-invalid').addClass('is-valid'); // remove the Boostrap error class from the control group
+                    $(element).closest('.form-control, .custom-control-input').removeClass('is-invalid').addClass('is-valid'); // remove the Boostrap error class from the control group
                 },
 
                 focusInvalid: false, // do not focus the last invalid input
