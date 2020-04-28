@@ -11,7 +11,8 @@ window.addEventListener('DOMContentLoaded', function() {
                     $('#error-' + selector).remove();
                     if (element.parent('.input-group').length ||
                         element.prop('type') === 'checkbox' || element.prop('type') === 'radio' || element.prop('type') === 'file') {
-                            error.appendTo(element.closest('.form-group'));
+                            error.appendTo(element.parent());
+                            //error.appendTo(element.closest('.form-group'));
                         // else just place the validation message immediately after the input
                     } else {
                         error.insertAfter(element);
